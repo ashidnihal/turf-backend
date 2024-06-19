@@ -8,7 +8,7 @@ const jwtMiddleware=(req,res,next)=>{
        const token=req.headers['authorization'].slice(7)
        console.log(token);
        // verify the token
-       const jwtVerification=jwt.verify(token, process.env.JWT_SECRET)
+       const jwtVerification=jwt.verify(token, "super2024")
        console.log(jwtVerification);//payload-userdid
        req.payload=jwtVerification.userid
        next()
